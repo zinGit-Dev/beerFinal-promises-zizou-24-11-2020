@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+/* html {
+  height: 100%;
+  background-color: #f8f8f8;
+} */
+html{
+    background-color: #F6C101;
+}
+.containerFinalCard{
+    display: flex;
+    justify-content: space-around;
+    /* font-size: larger; */
+    flex-wrap: wrap;
+    column-count: 2;
+    gap: 30px;
+    margin: 40px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    border: 2px solid black;
+}
+.card{
+        display: flex;
+        flex-direction: row;
+         align-items: center; 
+         /* align-items: flex-start; */
+         /* align-items: baseline; */
+        justify-content: space-between;
+        width: 1000px;
+        height: 500px;
+        margin: auto;
+        /* border: 0.5px solid #EC9D00;  */
+        border: 1px solid #EC9D00; 
+        border-radius: 30px;
+        padding: 20px;
+        box-shadow: 10px 5px 7px #EC9D00;
+        color:  #120902;
+        column-gap: 120px;
+    }
+    .card:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    p{
+        text-align: justify;
+    }
+img{
+        width: 150px;
+        height: 500px; 
+        /* border: 1px solid red; */
+}
+.descriptionBeer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* align-items: center; */
+        align-items: flex-start;
+        margin: auto;
+        padding: 1em;
+        gap: 10px;
+        /* border: 1px solid red; */
+        
+}
+.name{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.bold {
+    font-weight: bold;
+}
+.listStyle{
+    
+    /* columns: 100px */
+    list-style-type: circle;
+    
+}
+
+#mapid { 
+    height: 180px; 
+    border: 1px solid red;
+}
