@@ -29,10 +29,8 @@ let long = 0
 let length = 0
 let place_name = ""
 
+function getMap() {
 
- function fnMap() {
-
- 
     const city = ["Boston", "Bridgeport", "Brighton", "Brownsville", "Bryan", "Buffalo", "Burbank", "Burlington", "Cambridge", "Canton", "Cape Coral",
         "Carrollton", "Las Vegas", "Layton",
 
@@ -68,7 +66,29 @@ let place_name = ""
 
     console.log("esta es la url=>", urlMap)
     console.log("este es el random=>", random)
-    
+    console.log("este es el valor de longitud=>", long)
+    console.log("este es el valor de latitude=>", length)
+    console.log("esta es la ciudad=>", place_name)
+
+}
+
+function fnMap() {
+    const city = ["Boston", "Bridgeport", "Brighton", "Brownsville", "Bryan", "Buffalo", "Burbank", "Burlington", "Cambridge", "Canton", "Cape Coral",
+    "Carrollton", "Las Vegas", "Layton",
+
+    "rome", "Sarasota", "Savannah", "Scottsdale", "Scranton", "Seaside", "Seattle", "Sebastian", "Shreveport",
+    "madrid", "Sioux City", "Sioux Falls", "South Bend", "South Lyon", "Spartanburg", "Spokane", "Springdale", "Springfield",
+    "casablanca", "St. Paul", "St. Petersburg", "Stamford", "Sterling Heights", "Stockton", "Sunnyvale", "Syracuse", "Tacoma",
+    "london", "paris", "Temecula", "Tempe", "Thornton", "oslo", "Toledo", "Topeka", "Torrance", "Trenton",
+    "Tucson", "Tulsa", "Tuscaloosa", "Tyler", "Utica", "Vallejo", "Vancouver", , "Victorville", "Virginia Beach",
+    "Visalia", "Waco", "Warren", "Washington", "Waterbury", "Waterloo", "West Covina", "West Valley City",
+    "Westminster", "Wichita", "Wilmington", "Winston", "Winter Haven", "Worcester", "Yakima", "Yonkers", "York", "Youngstown"];
+    const random = Math.floor(Math.random() * city.length);
+
+    const urlMap = `https://api.mapbox.com/geocoding/v5/mapbox.places/${city[random]}.json?types=place&access_token=pk.eyJ1IjoiemluZ2l0LWRldiIsImEiOiJja2k0ZHV2NjEyZnplMnptcGMxa2JoZmp3In0.DF8-X_GwEWZC7pOUsndbog`
+
+
+
     return fetch(urlMap)
         .then((res) => res.json())
         .then((data) => {
@@ -81,6 +101,7 @@ let place_name = ""
             console.log("este es el valor de longitud=>", long)
             console.log("este es el valor de latitude=>", length)
             console.log("esta es la ciudad=>", place_name)
+            getMap()
         });
 
 }
@@ -98,6 +119,7 @@ function getSingleBeer() {
         .then((apiData) => {
             console.log(apiData)
             drawCard(apiData[0])
+            
             fnMap()
 
         });
