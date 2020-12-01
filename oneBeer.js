@@ -52,9 +52,9 @@ function getMap() {
 
     console.log("el valor de longitud antes", long)
 
-    // // marker.bindPopup(` First Brewed in in ${first_brewed}  in ${place_name}`).openPopup();
+     marker.bindPopup(` First Brewed in in ${first_brewed}  in ${place_name}`).openPopup();
 
-    marker.bindPopup(` First Brewed in x  in ${place_name}`).openPopup();
+   
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -121,6 +121,7 @@ function getSingleBeer() {
         .then(res => res.json())
         .then((apiData) => {
             console.log(apiData)
+            first_brewed = apiData[0].first_brewed
             drawCard(apiData[0])
             
             fnMap()

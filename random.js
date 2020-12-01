@@ -36,8 +36,6 @@ function getRandomBeer() {
     const id = new URLSearchParams(window.location.search).get('id');
 
 
-   
-
      const url = `https://api.punkapi.com/v2/beers/random`;
 
 console.log(url)
